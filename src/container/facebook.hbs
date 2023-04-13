@@ -4,35 +4,34 @@
             <strong> {{name}} </strong>
         </h2>
         <ul>
+            {{#each users}}
+            <hr>
             <h3>
                 <strong>Users:</strong>
             </h3>
-
-            {{#each users}}
             <p> {{name}}, {{gender}}, {{age}}</p>
             <p>ID: {{id}}</p>
 
             <br>
 
             <ul>
-                <li>
-                    <h4>
-                        <i>Friends:</i>
-                    </h4>
-                </li>
-
                 {{#each friends}}
+                <li>
+                    <h3>
+                        <i>Friends:</i>
+                    </h3>
+                </li>
                 <p> {{name}}, {{gender}}, {{age}}</p>
                 <p>ID: {{id}}</p>
 
                 <br>
 
                 <ul>
+                    {{#each mutual_friends}}
                     <li>
-                        <h5>
+                        <h3>
                             <strong>Mutual friends:</strong>
-                        </h5>
-                        {{#each mutual_friends}}
+                        </h3>
                         <p> {{name}}, {{gender}}, {{age}}</p>
                         <p>ID: {{id}}</p>
 
@@ -40,75 +39,72 @@
 
                         {{#if mutual_friends}}
                         <ul>
+                            {{#each mutual_friends}}
                             <li>
-                                <h5>
+                                <h3>
                                     <strong>Mutual friends:</strong>
-                                </h5>
-                                {{#each mutual_friends}}
+                                </h3>
                                 <p> {{name}}, {{gender}}, {{age}}</p>
                                 <p>ID: {{id}}</p>
-                                {{/each}}
                             </li>
+                            {{/each}}
+
                         </ul>
                         {{/if}}
 
 
-
-                        {{/each}}
                     </li>
+                    {{/each}}
+
                 </ul>
                 {{#if groups}}
-                <li>
-                    <h4>
-                        <i>Groups:</i>
-                    </h4>
-                </li>
-
                 {{#each groups}}
-
-                <p> {{name}}</p>
-                <p>ID: {{id}}</p>
-                <p><i> {{description}} </i></p>
-
+                <li>
+                    <h3>
+                        <i>Groups:</i>
+                    </h3>
+                    <p> {{name}}</p>
+                    <p>ID: {{id}}</p>
+                    <p><i> {{description}} </i></p>
+                </li>
                 <br>
 
                 <ul>
+                    {{#each members}}
                     <li>
-                        <h5>
+                        <h3>
                             <strong>Members:</strong>
-                        </h5>
-                        {{#each members}}
+                        </h3>
                         <p> {{name}}, {{gender}}, {{age}}</p>
                         <p>ID: {{id}}</p>
                         <br>
-                        {{/each}}
                     </li>
+                    {{/each}}
                 </ul>
                 {{/each}}
                 {{/if}}
-
                 {{/each}}
 
                 <br>
 
                 {{#if groups}}
-                <li>
-                    <h4>
-                        <i>Groups:</i>
-                    </h4>
-                </li>
-
                 {{#each groups}}
-                <p> {{name}}</p>
-                <p>ID: {{id}}</p>
-                <p><i> {{description}} </i></p>
+                <li>
+                    <h3>
+                        <i>Groups:</i>
+                    </h3>
+                    <p> {{name}}</p>
+                    <p>ID: {{id}}</p>
+                    <p><i> {{description}} </i></p>
+                </li>
                 <br>
                 <ul>
+
+                    {{#each members}}
                     <li>
-                        <h5>
+                        <h3>
                             <strong>Members:</strong>
-                        </h5>
-                        {{#each members}}
+                        </h3>
                         <p> {{name}}, {{gender}}, {{age}}</p>
                         <p>ID: {{id}}</p>
                         <br>
