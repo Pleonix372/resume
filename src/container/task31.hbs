@@ -301,24 +301,30 @@
                 <h5> {{title}} </h5>
             </div>
 
-            <div class="row col-9">
-                {{#each navigation}}
-                <div class="col-4">
-                    <a href="{{href}}" class="btn btn-link"> {{text}} </a>
-                </div>
-                {{/each}}
+            <div class="row">
 
-                {{#each socialMedia}}
-                <div class="col-4">
-                    <a href="{{link}}" class="btn btn-outline-dark"> {{name}} </a>
+                <div class="col-3">
+                    {{#each navigation}}
+                    <p><a href="{{href}}" class="btn btn-link"> {{text}} </a></p>
+                    {{/each}}
                 </div>
-                {{/each}}
 
-                {{#each partners}}
-                <div class="col-4">
-                    <a href="{{link}}" class="btn btn-outline-info"> {{name}} </a>
+
+
+                <div class="col-3">
+                    {{#each socialMedia}}
+                    <p><a href="{{link}}" class="btn btn-outline-dark"> {{name}} </a></p>
+                    {{/each}}
                 </div>
-                {{/each}}
+
+
+
+                <div class="col-3">
+                    {{#each partners}}
+                    <p><a href="{{link}}" class="btn btn-outline-info"> {{name}} </a></p>
+                    {{/each}}
+                </div>
+
             </div>
             {{/with}}
 
