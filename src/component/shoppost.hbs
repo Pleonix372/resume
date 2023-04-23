@@ -1,0 +1,32 @@
+<div class="col-12">
+    <div class="row">
+        {{#with data}}
+        <div class="display-6 text-center">{{title}}</div>
+        {{#each cards}}
+        <div class="col-3 mb-2">
+            <div class="card text-bg-dark mt-4">
+                <div class="card-header">
+                    {{title}}
+
+                    {{#if isTop}}
+                    <span class="badge text-bg-success rounded-pill">
+                        isTop
+                    </span>
+                    {{/if}}
+
+                    {{#if idNew}}
+                    <span class="badge text-bg-danger rounded-pill">
+                        idNew
+                    </span>
+                    {{/if}}
+                </div>
+
+                <div class="card-body">
+                    {{description}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/with}}
+    </div>
+</div>

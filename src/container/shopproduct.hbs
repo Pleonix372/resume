@@ -1,17 +1,7 @@
 <main class="m-3">
     <div class="row g-4">
 
-        <ol class="breadcrumb ms-5">
-            {{#each breadcrumb}}
-            <li class="breadcrumb-item">
-                {{#if url}}
-                <a href="{{url}}">{{name}}</a>
-                {{else}}
-                {{name}}
-                {{/if}}
-            </li>
-            {{/each}}
-        </ol>
+        {{> breadcrumb}}
 
         <div class="row">
             {{#with productData}}
@@ -165,12 +155,10 @@
                     {{/with}}
                 </div>
             </div>
-
-
             {{/with}}
         </div>
 
-
+        <hr class="my-5">
 
         {{> shopcard data=goodsOtherBlock}}
 
