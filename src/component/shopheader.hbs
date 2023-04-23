@@ -1,0 +1,25 @@
+<header>
+    {{#with navigation}}
+    <div class="card m-3">
+        <div class="card-body">
+            <div class="row">
+
+                <div class="col-4">
+                    <h3>Logo</h3>
+                </div>
+
+                <div class="col-8">
+
+                    <div class="nav justify-content-end">
+                        {{#each links}}
+                        <div class="nav-item">
+                            <a href="{{href}}" class="nav-link">{{text}}</a>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/with}}
+</header>

@@ -1,0 +1,181 @@
+<main class="m-3">
+    <div class="row g-4">
+
+        <ol class="breadcrumb ms-5">
+            {{#each breadcrumb}}
+            <li class="breadcrumb-item">
+                {{#if url}}
+                <a href="{{url}}">{{name}}</a>
+                {{else}}
+                {{name}}
+                {{/if}}
+            </li>
+            {{/each}}
+        </ol>
+
+        <div class="row">
+            {{#with productData}}
+            <div class="row">
+                <div class="col-6">
+                    <img class="card-img-top" src="{{img}}">
+
+                    {{#with info}}
+                    <div class="card my-4">
+
+                        <div class="card-body">
+
+                            <div class="card-title">
+                                <h6>{{title}}</h6>
+                            </div>
+                            {{about}}
+                            <div class="display-6">
+                                <b>{{price}}</b>
+                            </div>
+
+                            {{#with category.[0]}}
+                            {{#if isHot}}
+                            <span class="badge text-bg-warning rounded-pill">
+                                {{name}}
+                            </span>
+                            {{/if}}
+                            {{/with}}
+
+                            {{#with category.[1]}}
+                            {{#if isNew}}
+                            <span class="badge text-bg-primary rounded-pill">
+                                {{name}}
+                            </span>
+                            {{/if}}
+                            {{/with}}
+
+                            {{#with category.[2]}}
+                            {{#if isBonus}}
+                            <span class="badge text-bg-info rounded-pill">
+                                {{name}}
+                            </span>
+                            {{/if}}
+                            {{/with}}
+                        </div>
+                    </div>
+                    {{/with}}
+                </div>
+
+                <div class="col-5">
+                    {{#with item}}
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    {{head.[0]}}
+                                </th>
+                                <th>
+                                    {{head.[1]}}
+                                </th>
+                                <th>
+                                    {{head.[2]}}
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {{#with body.[0]}}
+                            <tr>
+                                <th>{{[0]}}</th>
+                                <td>{{[1]}}</td>
+                                <td>{{[2]}}</td>
+                            </tr>
+                            {{/with}}
+                            {{#with body.[1]}}
+                            <tr>
+                                <th>{{[0]}}</th>
+                                <td>{{[1]}}</td>
+                                <td>{{[2]}}</td>
+                            </tr>
+                            {{/with}}
+                            {{#with body.[2]}}
+                            <tr>
+                                <th>{{[0]}}</th>
+                                <td>{{[1]}}</td>
+                                <td>{{[2]}}</td>
+                            </tr>
+                            {{/with}}
+                        </tbody>
+                    </table>
+                    {{/with}}
+
+                    {{#with param}}
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <div>{{title}}</div>
+                        </div>
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                {{list.[0]}}
+                            </li>
+                            <li class="list-group-item">
+                                {{list.[1]}}
+                            </li>
+                            <li class="list-group-item">
+                                {{list.[2]}}
+                            </li>
+                        </ul>
+                    </div>
+                    {{/with}}
+
+
+                    {{#with alert}}
+                    {{#if isError}}
+                    <div class="alert alert-danger">
+                        {{text}}
+                    </div>
+                    {{/if}}
+                    {{/with}}
+
+                </div>
+
+
+
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    {{#with actionList.[0]}}
+                    {{#if isWarning}}
+                    <button class="btn btn-warning">{{name}}</button>
+                    {{/if}}
+                    {{/with}}
+
+                    {{#with actionList.[1]}}
+                    {{#if isError}}
+                    <button class="btn btn-outline-danger">{{name}}</button>
+                    {{/if}}
+                    {{/with}}
+
+                    {{#with actionList.[2]}}
+                    {{#if isSuccess}}
+                    <button class="btn btn-success">{{name}}</button>
+                    {{/if}}
+                    {{/with}}
+
+                    {{#with actionList.[3]}}
+                    {{#if isGood}}
+                    <button class="btn btn-outline-success">{{name}}</button>
+                    {{/if}}
+                    {{/with}}
+                </div>
+            </div>
+
+
+            {{/with}}
+        </div>
+
+
+
+        {{> shopcard data=goodsOtherBlock}}
+
+        <hr class="mx-5">
+
+        {{> shopaction}}
+    </div>
+</main>
