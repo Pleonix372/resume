@@ -13,7 +13,9 @@
             <hr class="my-5">
 
             <section>
-                {{> GoodsItem data=goodsBlock}}
+                {{#each goodsBlock}}
+                {{> GoodsItem}}
+                {{/each}}
             </section>
 
             <hr class="my-5">
