@@ -1,0 +1,112 @@
+<main class="m-5">
+    <div class="row g-5">
+        <div class="col-12">
+
+            <div class="mb-5">
+                {{> breadcrumb}}
+            </div>
+            <h1>{{header}}</h1>
+
+            <div class="row mt-4 mb-5">
+                {{#each sortBlock}}
+                <div class="col-3">
+                    <select class="form-select">
+                        <option selected class="text-muted" disabled>{{placeholder}}</option>
+                        {{#each options}}
+                        <option value="{{value}}">{{text}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                {{/each}}
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-body">
+                            {{#with filterBlock}}
+                            <div>
+                                {{#with sellers}}
+                                <div class="mb-3">{{title}}</div>
+
+                                {{#each list}}
+                                <div class="form-check">
+                                    <label class="form-check-label">{{value}}</label>
+                                    <input name="Продавець" type="checkbox" class="form-check-input">
+                                </div>
+                                {{/each}}
+                                {{/with}}
+                            </div>
+
+                            <hr class="my-3">
+
+                            <div>
+                                {{#with brands}}
+                                <div>{{title}}</div>
+
+                                {{#with input}}
+                                <input class="form-control my-3" placeholder="{{placeholder}}">
+                                {{/with}}
+
+                                {{#each options}}
+                                <div class="form-check">
+                                    <label class="form-check-label">{{value}}</label>
+                                    <input name="Бренд" type="checkbox" class="form-check-input">
+                                </div>
+                                {{/each}}
+                                {{/with}}
+                            </div>
+
+                            <hr class="my-3">
+
+                            <div>
+                                {{#with price}}
+                                <div>{{title}}</div>
+
+                                {{#with range}}
+                                <input class="form-control my-3" placeholder="{{from}}">
+                                <input class="form-control my-3" placeholder="{{to}}">
+                                {{/with}}
+
+                                {{#with button}}
+                                <a href="{{link}}" class="btn btn-outline-secondary">{{text}}</a>
+                                {{/with}}
+                                {{/with}}
+                            </div>
+
+                            <hr class="my-3">
+
+                            <div>
+                                {{#each filterList}}
+                                <div>{{title}}</div>
+
+                                {{#each options}}
+                                <div class="form-check">
+                                    <label class="form-check-label">{{value}}</label>
+                                    <input type="checkbox" class="form-check-input">
+                                </div>
+                                {{/each}}
+                                <hr class="my-3">
+                                {{/each}}
+                            </div>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-8">
+                    <div class="row">
+                        {{#each goodsList}}
+                        {{> catalogItem}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                {{> shopaction data=service}}
+            </div>
+
+        </div>
+    </div>
+</main>
